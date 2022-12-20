@@ -1,0 +1,16 @@
+
+<div style="color: red;" *ngIf="loading">LOADING...</div>
+
+<div style="display: flex; gap: 10px;">
+    <div *ngFor="let photo of photos">
+        <img style="width: 100px;" src="{{photo.url}}" alt="">
+    </div>
+</div>
+
+
+<div style="margin-top: 20px; cursor: pointer" *ngFor="let album of albums">
+    <div (click)="getPhotos(album.id)" [ngClass]="{'active': album.id === currentAlbumId}">
+        {{album.id}} - {{album.title}}
+    </div>
+</div>
+

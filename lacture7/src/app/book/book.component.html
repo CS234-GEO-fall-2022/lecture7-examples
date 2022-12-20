@@ -1,0 +1,6 @@
+<p>book works!</p>
+
+
+<div *ngFor="let bookitem of bookList; let i=index" [ngClass]="{'background': i == 0, 'ba': i == 1}">
+    <app-book-item [book]="bookitem"></app-book-item>
+</div>
